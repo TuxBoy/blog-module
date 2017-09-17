@@ -12,7 +12,7 @@
     ],
     "autoload": {
     "psr-4": {
-        "App\\BlogModule": "src/"
+        "App\\BlogModule\\": "src/"
         }
     },
     "require": {}
