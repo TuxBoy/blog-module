@@ -1,5 +1,10 @@
 {
     "name": "benoit/blog-module",
+    "description": "Blog module for tuxboy-framework",
+    "keywords": ["application", "module"],
+    "homepage": "http://php-di.org",
+    "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Benoît Mallo",
@@ -7,5 +12,6 @@
         }
     ],
     "minimum-stability": "stable",
+    "prefer-stable": true,
     "require": {}
 }
