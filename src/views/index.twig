@@ -3,12 +3,12 @@
 {% block body %}
 
     <div class="container">
-        <h1>Blog</h1>
+        <h1>BlogModule</h1>
 
         {% for article in articles %}
            <ul>
                <li>
-                   <a href="{{ path('blog.show', {'slug': article.slug}) }}">{{ article.name }}</a>
+                   <a href="{{ path('BlogModule.show', {'slug': article.slug}) }}">{{ article.name }}</a>
                    <small>{{ article.category.name }}</small>
                </li>
            </ul>

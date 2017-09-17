@@ -1,11 +1,11 @@
 <?php
-namespace App\Blog\Controller;
+namespace App\BlogModule\Controller;
 
 use Core\Builder\Builder;
 use Core\Controller\Controller;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use App\Blog\Entity\Category;
-use App\Blog\Repository\CategoryRepository;
+use App\BlogModule\Entity\Category;
+use App\BlogModule\Repository\CategoryRepository;
 
 class CategoryController extends Controller
 {
@@ -18,7 +18,7 @@ class CategoryController extends Controller
             $categoryRepository->insert($category);
             return $this->redirectTo('/');
         }
-        return $this->twig->render('blog/category/create.twig');
+        return $this->twig->render('BlogModule/category/create.twig');
     }
 
 }

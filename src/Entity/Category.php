@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Blog\Entity;
+namespace App\BlogModule\Entity;
 
 use Core\Annotation\Set;
 use Core\Entity;

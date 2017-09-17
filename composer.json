@@ -1,6 +1,6 @@
 {
     "name": "benoit/blog-module",
-    "description": "Blog module for tuxboy-framework",
+    "description": "BlogModule module for tuxboy-framework",
     "keywords": ["application", "module"],
     "license": "MIT",
     "type": "library",
@@ -10,7 +10,10 @@
             "email": "benoit.mallo@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
-    "prefer-stable": true,
+    "autoload": {
+    "psr-4": {
+        "App\\BlogModule": "src/"
+        }
+    },
     "require": {}
 }

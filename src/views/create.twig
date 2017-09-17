@@ -3,31 +3,31 @@
 {% block body %}
 
     <div class="container">
-        <h1>Editer un article</h1>
+        <h1>Ajouter un article</h1>
         <div class="row">
-            <form class="col s12" action="{{ path('blog.update', {'id': article.id}) }}" method="post">
+            <form class="col s12" action="{{ path('BlogModule.new') }}" method="post">
                 <div class="row">
                     <div class="input-field col s4">
-                        <input id="name" type="text" name="name" value="{{ article.name }}" class="validate">
+                        <input id="name" type="text" name="name" class="validate">
                         <label for="name">Titre</label>
                     </div>
                     <div class="input-field col s4">
-                        <input id="slug" type="text" name="slug" value="{{ article.slug }}" class="validate">
+                        <input id="slug" type="text" name="slug" class="validate">
                         <label for="slug">Slug</label>
                     </div>
                     <div class="input-field col s4">
-                        <select name="id_category">
+                        <select name="category_id">
                             {% for category in categories %}
-                                <option value="{{ category.id }}" {{ article.category.id == category.id ? 'selected' : '' }}>{{ category.name }}</option>
+                                <option value="{{ category.id }}">{{ category.name }}</option>
                             {% endfor %}
                         </select>
-                        <label for="id_category">Catégorie :</label>
+                        <label for="category_id">Catégorie :</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <textarea class="materialize-textarea" name="content"></textarea>
-                        <label for="content">Content</label>
+                        <label for="password">Content</label>
                     </div>
                 </div>
                 <button class="waves-effect waves-light btn" type="submit">Ajouter</button>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Blog\Entity;
+namespace App\BlogModule\Entity;
 
 use Cocur\Slugify\Slugify;
 use Core\Annotation\Set;
@@ -38,7 +38,7 @@ class Post extends Entity
     /**
      * @link belongsTo
      *
-     * @var \App\Blog\Entity\Category
+     * @var \App\BlogModule\Entity\Category
      */
     public $category;
 

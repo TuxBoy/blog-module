@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Blog\Controller;
+namespace App\BlogModule\Controller;
 
-use App\Blog\Table\CategoriesTable;
-use App\Blog\Table\PostsTable;
+use App\BlogModule\Table\CategoriesTable;
+use App\BlogModule\Table\PostsTable;
 use Core\Builder\Builder;
 use Core\Controller\Controller;
 use DI\NotFoundException;
 use GuzzleHttp\Psr7\ServerRequest;
-use App\Blog\Entity\Post;
+use App\BlogModule\Entity\Post;
 
 /**
- * BlogController.
+ * BlogModuleController.
  */
-class BlogController extends Controller
+class BlogModuleController extends Controller
 {
 
     /**
@@ -23,13 +23,13 @@ class BlogController extends Controller
     public function index(PostsTable $postsTable)
     {
         $articles = $postsTable->find()->contain(['Categories'])->all();
-        return $this->view->render('@blog/index.twig', compact('articles'));
+        return $this->view->render('@BlogModule/index.twig', compact('articles'));
     }
 
     public function listToArticles(PostsTable $postsTable)
     {
         $articles = $postsTable->find('all');
-        return $this->view->render('@blog/list.twig', compact('articles'));
+        return $this->view->render('@BlogModule/list.twig', compact('articles'));
     }
 
     /**
@@ -46,10 +46,10 @@ class BlogController extends Controller
             $postsTable->save($article);
             $this->flash->success("L'aticle a bien été créé");
 
-            return $this->redirectTo('/blog');
+            return $this->redirectTo('/BlogModule');
         }
         $categories = $categories->find()->all();
-        return $this->view->render('@blog/create.twig', compact('categories'));
+        return $this->view->render('@BlogModule/create.twig', compact('categories'));
     }
 
     /**
@@ -67,7 +67,7 @@ class BlogController extends Controller
             $postsTable->patchEntity($article, $data);
             $postsTable->save($article);
         }
-        return $this->view->render('@blog/update.twig', compact('article'));
+        return $this->view->render('@BlogModule/update.twig', compact('article'));
     }
 
     public function delete(int $id, PostsTable $postsTable)
@@ -77,13 +77,13 @@ class BlogController extends Controller
             throw new NotFoundException();
         }
         $postsTable->delete($article);
-        return $this->redirectTo('blog.list');
+        return $this->redirectTo('BlogModule.list');
     }
 
     public function show(string $slug, PostsTable $postsTable)
     {
         $article = $postsTable->find()->where(['slug' => $slug])->first();
 
-        return $this->view->render('@blog/show.twig', compact('article'));
+        return $this->view->render('@BlogModule/show.twig', compact('article'));
     }
 }

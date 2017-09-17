@@ -1,7 +1,7 @@
 <?php
-namespace App\Blog\Table;
+namespace App\BlogModule\Table;
 
-use App\Blog\Entity\Post;
+use App\BlogModule\Entity\Post;
 use Cake\ORM\Table;
 
 class PostsTable extends Table
