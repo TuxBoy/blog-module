@@ -2,7 +2,6 @@
     "name": "benoit/blog-module",
     "description": "Blog module for tuxboy-framework",
     "keywords": ["application", "module"],
-    "homepage": "http://php-di.org",
     "license": "MIT",
     "type": "library",
     "authors": [
