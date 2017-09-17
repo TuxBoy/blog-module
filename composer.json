@@ -1,0 +1,11 @@
+{
+    "name": "benoit/blog-application",
+    "authors": [
+        {
+            "name": "Benoît Mallo",
+            "email": "benoit.mallo@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
