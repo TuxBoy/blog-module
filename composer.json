@@ -3,7 +3,7 @@
     "description": "BlogModule module for tuxboy-framework",
     "keywords": ["application", "module"],
     "license": "MIT",
-    "type": "library",
+    "type": "module",
     "authors": [
         {
             "name": "Benoît Mallo",
